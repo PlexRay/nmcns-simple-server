@@ -36,13 +36,23 @@ var WebProvider = nmcpp.Provider.extend({
 /* Web Provider
 ============================================================================= */
 
+var webchain = 'https://dnschain.info/bit/'
+
 new WebProvider({
-    addr: 'https://dnschain.info/bit/'
+    addr: webchain
+});
+
+new WebProvider({
+    addr: webchain,
+    gtld: 'plex',
+    transform: function(name) {
+        return 'plex-net-' + name
+    }
 });
 
 new nmcpp.TestProvider({
     debug: debug,
-    gtld: 'coin'
+    gtld: 'test'
 }, {
     "d/example": {
         "map": {
@@ -114,9 +124,10 @@ var port = 5335;
 
 console.log('Staring DNS server at ' + port + '...');
 server.serve(port, function() {
-    console.log('  Serving gTLDs: .bit, .coin');
+    console.log('  Serving gTLDs: .bit, .plex, .test');
     console.log('Try the following commands:');
     console.log('  nslookup -query=SOA -port='+port+' webrtc.bit localhost');
-    console.log('  nslookup -query=TXT -port='+port+' eu.example.coin localhost');
-    console.log('  nslookup -query=SRV -port='+port+' _domain._udp.us.example.coin localhost');
+    console.log('  nslookup -query=TXT -port='+port+' eu.example.test localhost');
+    console.log('  nslookup -query=SRV -port='+port+' _domain._udp.us.example.test localhost');
+    console.log('  nslookup -query=AAAA -port='+port+' atlas.plex localhost');
 });

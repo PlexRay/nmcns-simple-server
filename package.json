@@ -1,7 +1,7 @@
 {
     "name": "nmcns-simple-server",
     "description": "nmcns-simple-server",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "private": false,
     "author": {
         "name": "PlexRay, Inc.",
