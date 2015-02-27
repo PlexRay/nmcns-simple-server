@@ -1,7 +1,7 @@
 {
     "name": "nmcns-simple-server",
     "description": "nmcns-simple-server",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "private": false,
     "author": {
         "name": "PlexRay, Inc.",
@@ -29,7 +29,7 @@
         "native-dns": "^0.7",
         "dnsjs": "^0.1.1",
         "nmcpp": "^1.1.9",
-        "nmcns": "^0.1.1"
+        "nmcns": "^0.1.2"
     },
     "devDependencies": {
         "brfs": "^1.4",
